@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Harshie</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Press Start 2P', cursive, sans-serif;
+      background: linear-gradient(135deg, #ffb6d2, #f7a7c9);
+      text-align: center;
+      animation: sparkle 1.5s infinite alternate;
+      position: relative;
+    }
+    h1 {
+      font-size: 3em;
+      color: #ff5e78;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    h1::after {
+      content: "✨";
+      position: absolute;
+      top: -10px;
+      left: 100%;
+      animation: sparkle 1.5s infinite alternate;
+    }
+    button {
+      margin-top: 40px;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 25px;
+      background: #ffb347;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #ff9234;
+      transform: scale(1.05);
+    }
+    .sticker {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: bounce 2s infinite;
+    }
+    .sticker img {
+      width: 60px;
+    }
+    @keyframes sparkle {
+      0% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Happy Birthday Harshie 🎉</h1>
+  <button onclick="window.location.href='mangoes.html'">Why you are the best babygirl 💛</button>
+
+  <div class="sticker">
+    <img src="https://i.imgur.com/3l4Fh3P.png" alt="Cute Bunny Sticker">
+  </div>
+  <div class="sticker" style="top: 100px;">
+    <img src="https://i.imgur.com/1wR9Htd.png" alt="Cute Cat Sticker">
+  </div>
+</body>
+</html>
