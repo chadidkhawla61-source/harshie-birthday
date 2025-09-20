@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mango Messages</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, #ffb7c5, #ffcb77);
+      text-align: center;
+      padding: 40px;
+      background-size: cover;
+      animation: sparkle 1.5s infinite alternate;
+    }
+    h2 {
+      color: #ff5e78;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    h2::after {
+      content: "✨";
+      position: absolute;
+      top: -10px;
+      left: 100%;
+      animation: sparkle 1.5s infinite alternate;
+    }
+    .mango-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      justify-items: center;
+      margin-top: 30px;
+    }
+    .mango {
+      width: 70px;
+      height: 90px;
+      background-image: url('https://i.imgur.com/EP9y9Vs.png');
+      background-size: cover;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.2s;
+      border-radius: 50%;
+    }
+    .mango:hover {
+      transform: scale(1.1);
+    }
+    .message {
+      display: none;
+      margin-top: 10px;
+      font-size: 1.1em;
+      color: #444;
+    }
+    .sticker {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: bounce 2s infinite;
+    }
+    .sticker img {
+      width: 50px;
+    }
+    @keyframes sparkle {
+      0% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h2>🥭 Click a mango to see why you’re the best 🥭</h2>
+  <div class="mango-grid">
+    <div class="mango" onclick="showMessage(0)"></div>
+    <div class="mango" onclick="showMessage(1)"></div>
+    <div class="mango" onclick="showMessage(2)"></div>
+    <div class="mango" onclick="showMessage(3)"></div>
+    <div class="mango" onclick="showMessage(4)"></div>
+    <div class="mango" onclick="showMessage(5)"></div>
+    <div class="mango" onclick="showMessage(6)"></div>
+    <div class="mango" onclick="showMessage(7)"></div>
+    <div class="mango" onclick="showMessage(8)"></div>
+    <div class="mango" onclick="showMessage(9)"></div>
+  </div>
+
+  <div id="messageBox" class="message"></div>
+
+  <div class="sticker">
+    <img src="https://i.imgur.com/7oDhN4F.png" alt="cute sticker">
+  </div>
+
+  <script>
+    const messages = [
+      "You're so pretty 🧡",
+      "You're super smart 🧠✨",
+      "You're very funny 😂",
+      "Your ambition is inspiring 🌟",
+      "You have a nice booty 🍑",
+      "You make bad days better🌻🌞",
+      "You have great impressions 🐵",
+      "You're stronk 💪",
+      "You're kind 😇",
+      "You would beat me in a fight ig 🥊"
+    ];
+
+    function showMessage(index) {
+      const box = document.getElementById('messageBox');
+      box.innerText = messages[index];
+      box.style.display = "block";
+    }
+  </script>
+</body>
+</html>
