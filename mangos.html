@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mango Messages</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, #ffb6d2, #f7a7c9);
+      text-align: center;
+      padding: 40px;
+      background-size: cover;
+      animation: sparkle 1.5s infinite alternate;
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+    h2 {
+      color: #ff5e78;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    h2::after {
+      content: "✨";
+      position: absolute;
+      top: -10px;
+      left: 100%;
+      animation: sparkle 1.5s infinite alternate;
+    }
+    .mango-grid {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .mango {
+      width: 70px;
+      height: 90px;
+      background-image: url('https://i.imgur.com/EP9y9Vs.png');
+      background-size: cover;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform 0.2s ease, z-index 0s;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .mango:hover {
+      transform: scale(1.2);
+      z-index: 2;
+    }
+    .message {
+      display: none;
+      font-size: 1.2em;
+      color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 105, 180, 0.7);
+      padding: 10px;
+      border-radius: 15px;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      font-weight: bold;
+      text-align: center;
+    }
+    @keyframes sparkle {
+      0% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <h2>🥭 Click a mango to see why you’re the best 🥭</h2>
+
+  <!-- Mango Grid (Scatter Effect) -->
+  <div class="mango-grid">
+    <div class="mango" onclick="showMessage(0)" style="left: 10%; top: 10%"></div>
+    <div class="mango" onclick="showMessage(1)" style="left: 20%; top: 40%"></div>
+    <div class="mango" onclick="showMessage(2)" style="left: 50%; top: 10%"></div>
+    <div class="mango" onclick="showMessage(3)" style="left: 70%; top: 30%"></div>
+    <div class="mango" onclick="showMessage(4)" style="left: 10%; top: 70%"></div>
+    <div class="mango" onclick="showMessage(5)" style="left: 60%; top: 50%"></div>
+    <div class="mango" onclick="showMessage(6)" style="left: 30%; top: 60%"></div>
+    <div class="mango" onclick="showMessage(7)" style="left: 80%; top: 20%"></div>
+    <div class="mango" onclick="showMessage(8)" style="left: 40%; top: 80%"></div>
+    <div class="mango" onclick="showMessage(9)" style="left: 75%; top: 70%"></div>
+  </div>
+
+  <div id="messageBox" class="message"></div>
+
+  <script>
+    const messages = [
+      "You're so pretty 🧡",
+      "You're super smart 🧠✨",
+      "You're very funny 😂",
+      "Your ambition is inspiring 🌟",
+      "You have a nice booty 🍑",
+      "You make bad days better🌻🌞",
+      "You have great impressions 🐵",
+      "You're stronk 💪",
+      "You're kind 😇",
+      "You would beat me in a fight ig 🥊"
+    ];
+
+    function showMessage(index) {
+      const box = document.getElementById('messageBox');
+      box.innerText = messages[index];
+      box.style.display = "block";
+      const mango = document.querySelectorAll('.mango')[index];
+      mango.appendChild(box);
+    }
+  </script>
+</body>
+</html>
+
+
